@@ -1,0 +1,2 @@
+# Notes videos C++
+## Namespace
