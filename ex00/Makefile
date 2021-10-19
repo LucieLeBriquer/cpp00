@@ -19,7 +19,4 @@ fclean		: clean
 
 re			: fclean all
 
-norme		:
-			@norminette $(SRCS)
-
-.PHONY		: all clean fclean re norme
+.PHONY		: all clean fclean re
