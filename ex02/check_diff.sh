@@ -6,6 +6,15 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
 
+## check if 19920104_091532.log file is here
+
+log_ok=$(ls 19920104_091532.log 2>/dev/null | wc -l)
+if [ "$log_ok" -eq "0" ]
+then
+    printf "19920104_091532.log needed\n"
+    exit
+fi
+
 ## test
 
 make re && ./tests > account.log
