@@ -13,7 +13,7 @@
 #include <cstring>
 #include <iostream>
 
-std::string	print_upper(char *str) 
+void	print_upper(char *str) 
 {
     int 		i;
 	std::string	strUp;
@@ -24,13 +24,12 @@ std::string	print_upper(char *str)
         strUp += std::toupper(str[i]);
         i++;
     }
-	return (strUp);
+	std::cout << strUp;
 }
 
 int main(int argc, char **argv)
 {
-    int 		i;
-	std::string	msgUp;
+    int i;
 
     if (argc == 1)
     {
@@ -39,7 +38,7 @@ int main(int argc, char **argv)
     }
     i = 0;
     while (++i < argc)
-        msgUp += print_upper(argv[i]);
-    std::cout << msgUp << std::endl;
+        print_upper(argv[i]);
+    std::cout << std::endl;
 	return (0);
 }
