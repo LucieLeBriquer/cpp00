@@ -13,10 +13,12 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 # include <iostream>
+# include <iomanip>
 
 class Contact
 {
     private:
+		int			_index;
 		std::string	_firstName;
 		std::string	_lastName;
 		std::string	_nickname;
@@ -25,8 +27,13 @@ class Contact
 	
     public:
         Contact();
+		/*Contact(int index, std::string firstName, std::string lastName,
+			std::string nickname, std::string phoneNumber,
+			std::string darkestSecret);*/
         ~Contact();
-		//void search() const;
+		void	fillContact(int index);
+		void	displayContact(void) const;
+		void	displayContactDetails(void) const;
 };
 
 #endif
