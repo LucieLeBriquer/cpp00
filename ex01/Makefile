@@ -18,7 +18,7 @@ _RESET		= \033[0m
 _CLEAR		= \033[0K\r\c
 _OK			= [\033[32mOK\033[0m]
 
-%.o			: %.c
+%.o			: %.cpp
 			@echo "[..] $(NAME_SHORT)... compiling $*.cpp\r\c"
 			@$(CC) $(MAIN_INC) -c $< -o $@
 			@echo "$(_CLEAR)"
