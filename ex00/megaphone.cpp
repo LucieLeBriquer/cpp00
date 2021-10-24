@@ -6,30 +6,31 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 17:20:04 by lle-briq          #+#    #+#             */
-/*   Updated: 2021/10/19 19:54:50 by lle-briq         ###   ########.fr       */
+/*   Updated: 2021/10/24 19:09:07 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cstring>
 #include <iostream>
 
-void    print_upper(char *str)
+std::string	print_upper(char *str) 
 {
-    int j;
+    int 		i;
+	std::string	strUp;
 
-    j = 0;
-    while (str[j])
+    i = 0;
+    while (str[i])
     {
-        if (str[j] >= 'a' && str[j] <= 'z')
-            std::cout << (char)(str[j] - 'a' + 'A');
-        else
-            std::cout << str[j];
-        j++;
+        strUp += std::toupper(str[i]);
+        i++;
     }
+	return (strUp);
 }
 
 int main(int argc, char **argv)
 {
-    int i;
+    int 		i;
+	std::string	msgUp;
 
     if (argc == 1)
     {
@@ -38,6 +39,7 @@ int main(int argc, char **argv)
     }
     i = 0;
     while (++i < argc)
-        print_upper(argv[i]);
-    std::cout << std::endl;
+        msgUp += print_upper(argv[i]);
+    std::cout << msgUp << std::endl;
+	return (0);
 }
