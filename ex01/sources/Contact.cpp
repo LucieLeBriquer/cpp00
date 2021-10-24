@@ -25,10 +25,15 @@ Contact::Contact(void)
 	return ;
 }*/
 
+Contact::~Contact(void)
+{
+	return ;
+}
+
 void	Contact::fillContact(int index)
 {
 	_index = index;
-	std::cout << "Please fill your contact informations." << std::endl;
+	std::cout << "Please fill the following informations." << std::endl;
 	std::cout << std::setw(17) << "First name  ";
 	std::getline(std::cin, _firstName);
 	std::cout << std::setw(17) << "Last name  ";
@@ -44,7 +49,7 @@ void	Contact::fillContact(int index)
 static void	printTenChar(std::string str)
 {
 	int			len;
-	std::string	spaces = "          ";
+	std::string	spaces(10, ' ');
 
 	len = str.length();
 	if (len <= 10)
@@ -71,10 +76,5 @@ void	Contact::displayContactDetails(void) const
 	std::cout << std::setw(17) << "Last name  " << _lastName << std::endl;
 	std::cout << std::setw(17) << "Nickname  " << _nickname << std::endl;
 	std::cout << std::setw(17) << "Phone number  " << _phoneNumber << std::endl;
-	std::cout << std::setw(17) << "Darkest secret  " << _darkestSecret << std::endl;
-}
-
-Contact::~Contact(void)
-{
-	return ;
+	std::cout << std::setw(17) << "Darkest secret  " << _darkestSecret << std::endl;;
 }

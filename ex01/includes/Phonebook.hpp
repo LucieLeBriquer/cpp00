@@ -12,15 +12,20 @@
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
-# include <iostream>
+# include "Contact.hpp"
+# define maxContacts 8
 
 class Phonebook
 {
     private:
-        /* data */
-    public:
-        Phonebook(/* args */);
+		int		_lastIndex;
+		Contact	_contacts[maxContacts];
+
+	public:
+        Phonebook();
         ~Phonebook();
+		void	addContact(void);
+		void	searchContact(void) const;
 };
 
 #endif

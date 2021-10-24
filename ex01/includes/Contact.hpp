@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 20:05:04 by lle-briq          #+#    #+#             */
-/*   Updated: 2021/10/24 19:53:07 by lle-briq         ###   ########.fr       */
+/*   Updated: 2021/10/24 21:45:34 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CONTACT_HPP
 # include <iostream>
 # include <iomanip>
+# include <string>
 
 class Contact
 {
