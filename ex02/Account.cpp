@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 23:21:53 by lle-briq          #+#    #+#             */
-/*   Updated: 2021/10/26 23:59:46 by lle-briq         ###   ########.fr       */
+/*   Updated: 2022/02/15 18:32:21 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,20 @@ void	Account::displayStatus(void) const
 
 void	Account::_displayTimestamp(void)
 {
-	time_t	time = std::time(nullptr);
-	std::cout << std::put_time(std::localtime(&time), "[%G%m%d_%H%M%S] ");
+	time_t		rawtime;
+  	struct tm	*timeinfo;
+	  
+	std::time(&rawtime);
+	timeinfo = std::localtime(&rawtime);
+	std::cout << "[" << timeinfo->tm_year + 1900;
+	std::cout << std::setw(2) << std::setfill('0') << timeinfo->tm_mon + 1;
+	std::cout << std::setw(2) << std::setfill('0') << timeinfo->tm_mday;
+	std::cout << "_";
+	std::cout << std::setw(2) << std::setfill('0') << timeinfo->tm_hour;
+	std::cout << std::setw(2) << std::setfill('0') << timeinfo->tm_min;
+	std::cout << std::setw(2) << std::setfill('0') << timeinfo->tm_sec;
+	std::cout << "] ";
+	
 }
 
 int	Account::getNbAccounts(void)
