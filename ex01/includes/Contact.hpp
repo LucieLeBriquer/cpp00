@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 20:05:04 by lle-briq          #+#    #+#             */
-/*   Updated: 2021/10/24 21:45:34 by lle-briq         ###   ########.fr       */
+/*   Updated: 2022/02/15 17:27:45 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ class Contact
 	
     public:
         Contact();
-		/*Contact(int index, std::string firstName, std::string lastName,
-			std::string nickname, std::string phoneNumber,
-			std::string darkestSecret);*/
         ~Contact();
 		void	fillContact(int index);
 		void	displayContact(void) const;

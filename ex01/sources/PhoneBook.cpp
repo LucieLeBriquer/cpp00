@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 20:58:31 by lle-briq          #+#    #+#             */
-/*   Updated: 2021/10/24 22:03:34 by lle-briq         ###   ########.fr       */
+/*   Updated: 2022/02/15 17:43:21 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 
-Phonebook::Phonebook(void)
+PhoneBook::PhoneBook(void)
 {
 	_lastIndex = -1;
 	return ;
 }
 
-Phonebook::~Phonebook(void)
+PhoneBook::~PhoneBook(void)
 {
 	return ;
 }
 
-void	Phonebook::addContact(void)
+void	PhoneBook::addContact(void)
 {
 	if (_lastIndex >= maxContacts - 1)
 		_contacts[maxContacts - 1].fillContact(maxContacts - 1);
@@ -40,14 +40,30 @@ static void	displayHeader(void)
 	std::string	header;
 	std::string	line(43, '-');
 
-	header += "  Index   |";
+	header += "     Index|";
 	header += "First Name|";
 	header += " Last Name|";
-	header += " Nickname ";
+	header += "  Nickname";
 	std::cout << header << std::endl << line << std::endl;
 }
 
-void	Phonebook::searchContact(void) const
+static int	stringToInt(std::string str)
+{
+	int	i;
+	int res;
+
+	i = 0;
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	{
+		res = 10 * res + str[i] - '0';
+		i++;
+	}
+	if (str[i])
+		return (-1);
+	return (res);
+}
+
+void	PhoneBook::searchContact(void) const
 {
 	int	i;
 	int	index;
@@ -68,7 +84,7 @@ void	Phonebook::searchContact(void) const
 	{
 		std::cout << "Enter a valid index ";
 		std::getline(std::cin, indexStr);
-		index = std::stoi(indexStr);
+		index = stringToInt(indexStr);
 	}
 	_contacts[index].displayContactDetails();
 	std::cout << std::endl;

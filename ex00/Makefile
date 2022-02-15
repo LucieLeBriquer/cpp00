@@ -1,4 +1,4 @@
-CC			= clang++ -Wall -Wextra -Werror
+CC			= c++ -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
 NAME		= ./megaphone
 NAME_SHORT	= megaphone

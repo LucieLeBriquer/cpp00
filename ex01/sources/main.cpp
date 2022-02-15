@@ -6,11 +6,11 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 21:17:38 by lle-briq          #+#    #+#             */
-/*   Updated: 2021/10/24 21:56:31 by lle-briq         ###   ########.fr       */
+/*   Updated: 2022/02/15 17:27:21 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 
 static void	printHelp(void)
 {
@@ -21,7 +21,7 @@ static void	printHelp(void)
 
 int main(void)
 {
-	Phonebook	phonebook;
+	PhoneBook	phonebook;
 	std::string	cmd;
 
 	printHelp();

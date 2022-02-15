@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 19:24:11 by lle-briq          #+#    #+#             */
-/*   Updated: 2021/10/24 20:48:46 by lle-briq         ###   ########.fr       */
+/*   Updated: 2022/02/15 17:42:35 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,6 @@ Contact::Contact(void)
 {
 	return ;
 }
-
-/*Contact::Contact(int index, std::string firstName, std::string lastName,
-    std::string nickname, std::string phoneNumber, std::string darkestSecret) :
-    _index(index), _firstName(firstName), _lastName(lastName),
-	_nickname(nickname), _phoneNumber(phoneNumber), _darkestSecret(darkestSecret)
-{
-	return ;
-}*/
 
 Contact::~Contact(void)
 {
@@ -60,7 +52,10 @@ static void	printTenChar(std::string str)
 
 void	Contact::displayContact(void) const
 {
-	printTenChar(std::to_string(_index));
+	std::string		index = "";
+
+	index += _index + '0';
+	printTenChar(index);
 	std::cout << "|";
 	printTenChar(_firstName);
 	std::cout << "|";
