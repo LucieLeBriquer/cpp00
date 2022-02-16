@@ -38,6 +38,11 @@ void	Contact::fillContact(int index)
 	std::getline(std::cin, _darkestSecret);
 }
 
+void	Contact::setIndex(int index)
+{
+	_index = index;
+}
+
 static void	printTenChar(std::string str)
 {
 	int			len;

@@ -25,8 +25,15 @@ PhoneBook::~PhoneBook(void)
 
 void	PhoneBook::addContact(void)
 {
-	if (_lastIndex >= maxContacts - 1)
-		_contacts[maxContacts - 1].fillContact(maxContacts - 1);
+	if (_lastIndex == maxContacts - 1)
+	{
+		for (int i = 0; i < maxContacts - 1; i++)
+		{
+			_contacts[i] = _contacts[i + 1];
+			_contacts[i].setIndex(i);
+		}
+		_contacts[_lastIndex].fillContact(_lastIndex);
+	}
 	else
 	{
 		_lastIndex++;
@@ -34,6 +41,7 @@ void	PhoneBook::addContact(void)
 	}
 	std::cout << std::endl;
 }
+
 
 static void	displayHeader(void)
 {
@@ -50,7 +58,7 @@ static void	displayHeader(void)
 static int	stringToInt(std::string str)
 {
 	int	i;
-	int res;
+	int res = 0;
 
 	i = 0;
 	while (str[i] && str[i] >= '0' && str[i] <= '9')

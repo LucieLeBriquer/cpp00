@@ -32,6 +32,7 @@ class Contact
 		void	fillContact(int index);
 		void	displayContact(void) const;
 		void	displayContactDetails(void) const;
+		void	setIndex(int index);
 };
 
 #endif
